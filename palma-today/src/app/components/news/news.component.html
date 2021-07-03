@@ -1,0 +1,9 @@
+<ol>
+  <li *ngFor="let new of news">
+    <a href={{new.url}}>
+      <h1 class="title">{{new.title}}</h1>
+      <section class="section">{{new.section}}</section>
+      <section class="date">{{new.date | date: 'shortDate'}}</section>
+    </a>
+  </li>
+</ol>

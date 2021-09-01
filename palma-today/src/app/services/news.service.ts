@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class NewsService {
 
-  private url: string = "api/news";
+  private url: string = "./assets/api/news.json";
 
   // Http client to do crud oprations to the server
   constructor(private http: HttpClient) { }

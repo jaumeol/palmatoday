@@ -1,4 +1,4 @@
-<ol>
+<!--<ol>
   <li *ngFor="let new of news">
     <a href={{new.url}}>
       <h1 class="title">{{new.title}}</h1>
@@ -6,4 +6,20 @@
       <section class="date">{{new.date | date: 'shortDate'}}</section>
     </a>
   </li>
-</ol>
+</ol>-->
+
+<div *ngIf = "news!=null; else wait">
+  <table border = "1">
+    <tr>
+      <td>TITLE</td>
+      <td>SECTION</td>
+      <td>DATE</td>
+      <td>URL</td>
+    </tr>
+    <tr *ngFor = "let new of news">
+      <td>{{ new.title }}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #wait>Cargando datos...</ng-template>

@@ -9,7 +9,15 @@ import { NewsService } from 'src/app/services/news.service';
 })
 export class NewsComponent implements OnInit {
 
-  public title: string = "title";
+  news: any = null;
+
+  constructor(private newsService: NewsService) { }
+
+  ngOnInit() {
+    this.newsService.getAllNews().subscribe(data => this.news = data);
+  }
+
+  /*public title: string = "title";
   public section: string = "section";
   public date: Date = new Date("01/01/2021");
 
@@ -35,6 +43,6 @@ export class NewsComponent implements OnInit {
       console.log(results[0].webUrl);
 
     });
-  }
+  }*/
 
 }

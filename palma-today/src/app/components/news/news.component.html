@@ -17,7 +17,8 @@
       <td>URL</td>
     </tr>
     <tr *ngFor = "let new of news">
-      <td>{{ new.title }}</td>
+      <td>{{ new.header }}</td>
+      <td><a [href]="new.link">Link</a></td>
     </tr>
   </table>
 </div>

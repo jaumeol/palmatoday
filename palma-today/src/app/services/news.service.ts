@@ -9,14 +9,14 @@ import { Observable } from 'rxjs';
 export class NewsService {
 
   //private url: string = "./assets/api/news.json";
-  private url: string = "http://killeracces.atwebpages.com/getNews.php";
+  private url: string = "http://palma.today/proves/index2.php";
 
   // Http client to do crud oprations to the server
   constructor(private http: HttpClient) { }
 
   // returns the array of news stored on the (local, for now) server
-  getAllNews(): Observable<any> {
-    return this.http.get<any>(this.url);
+  getAllNews(): Observable<Array<New>> {
+    return this.http.get<Array<New>>(this.url);
     
     //return this.http.get(`${this.url}`,{ responseType: 'text' });
   }

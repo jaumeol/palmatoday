@@ -9,7 +9,7 @@ import { NewsService } from 'src/app/services/news.service';
 })
 export class NewsComponent implements OnInit {
 
-  news: any = null;
+  news: Array<New> = [];
 
   constructor(private newsService: NewsService) { }
 

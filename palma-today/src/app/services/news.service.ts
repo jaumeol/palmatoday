@@ -9,10 +9,7 @@ import { Observable } from 'rxjs';
 export class NewsService {
 
   //private url: string = "./assets/api/news.json";
-
-  //private url: string = "./assets/getNews.php";
   private url: string = "http://killeracces.atwebpages.com/getNews.php";
-  //private url: string = "http://3849301@killeracces.atwebpages.com/killeracces.atwebpages.com/getNews.php";
 
   // Http client to do crud oprations to the server
   constructor(private http: HttpClient) { }

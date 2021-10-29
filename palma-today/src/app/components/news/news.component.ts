@@ -11,14 +11,25 @@ export class NewsComponent implements OnInit {
 
   news: Array<New> = [];
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService) {
+    this.newsService.news$.subscribe(
+      (next)=>{
+        this.news = next;
+      },
+      (err)=>{
+        console.log("error al suscribirse al observable de news service");
+      },
+      ()=>{}
+    )
+  }
 
   ngOnInit() {
-    //this.newsService.getAllNews().subscribe(data => this.news = data);
-    this.newsService.getAllNews().subscribe(
-      (data) => {this.news = data;},
-      (error) => {console.log("error vaya kk"); console.log(error);}
-    );
+      this.refresh();
+  }
+
+
+  refresh(){
+    this.newsService.getAllNews();
   }
 
   /*public title: string = "title";
@@ -40,7 +51,7 @@ export class NewsComponent implements OnInit {
           title: result.webTitle,
           date: result.webPublicationDate,
           section: result.sectionName,
-          url: result.webUrl 
+          url: result.webUrl
         })
       });
 

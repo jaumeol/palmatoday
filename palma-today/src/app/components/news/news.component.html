@@ -8,15 +8,15 @@
   </li>
 </ol>-->
 <button (click)="refresh()">refresh</button>
-<div *ngIf = "news!=null; else wait">
-  <table border = "1">
+<div *ngIf="news!=null; else wait">
+  <table border="1">
     <tr>
       <td>TITLE</td>
       <td>SECTION</td>
       <td>DATE</td>
       <td>URL</td>
     </tr>
-    <tr *ngFor = "let new of news">
+    <tr *ngFor="let new of news">
       <td>{{ new.header }}</td>
       <td><a [href]="new.link">Link</a></td>
     </tr>

@@ -32,4 +32,12 @@ export class NewsService {
       () => { });
     //return this.http.get(`${this.url}`,{ responseType: 'text' });
   }
+
+  getAllNewsObs(): Observable<Array<New>>{
+    return this.http.get<Array<New>>(this.url);
+  }
+
+  getNews$(){
+    return this.news$;
+  }
 }

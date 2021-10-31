@@ -12,11 +12,11 @@ export class NewsComponent implements OnInit {
   news: Array<New> = [];
 
   constructor(private newsService: NewsService) {
+    this.refresh();
     
   }
 
   ngOnInit() {
-    this.refresh();
   }
 
 

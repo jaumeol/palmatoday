@@ -1,0 +1,13 @@
+ol {
+  list-style: none;
+}
+
+ol {
+    display: flex;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

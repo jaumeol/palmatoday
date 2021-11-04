@@ -12,24 +12,24 @@ export class NewsComponent implements OnInit {
   news: Array<New> = [];
 
   constructor(private newsService: NewsService) {
-    this.refresh();
-    
+    this.newsService.news$.subscribe(
+      (next)=>{
+        this.news = next;
+      },
+      (err)=>{
+        console.log("error al suscribirse al observable de news service");
+      },
+      ()=>{}
+    )
   }
 
   ngOnInit() {
+      this.refresh();
   }
 
 
-  refresh() {
-    this.newsService.getAllNewsObs().subscribe(
-      (news) => {
-        this.news = news;
-      },
-      (err) => {
-        console.log("error al suscribirse al observable de news service");
-      },
-      () => { }
-    );
+  refresh(){
+    this.newsService.getAllNews();
   }
 
   /*public title: string = "title";

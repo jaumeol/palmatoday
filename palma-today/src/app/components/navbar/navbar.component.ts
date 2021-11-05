@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  activeSideBar!:boolean;
+
+  constructor() {
+    this.activeSideBar = false;
+  }
 
   ngOnInit(): void {
+  }
+
+  toggleSideBar(){
+    this.activeSideBar = !this.activeSideBar;
   }
 
 }

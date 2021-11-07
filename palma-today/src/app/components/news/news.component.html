@@ -1,26 +1,5 @@
-<!--<ol>
-  <li *ngFor="let new of news">
-    <a href={{new.url}}>
-      <h1 class="title">{{new.title}}</h1>
-      <section class="section">{{new.section}}</section>
-      <section class="date">{{new.date | date: 'shortDate'}}</section>
-    </a>
-  </li>
-</ol>-->
 <button (click)="refresh()">refresh</button>
-<div *ngIf = "news!=null; else wait">
-  <table border = "1">
-    <tr>
-      <td>TITLE</td>
-      <td>SECTION</td>
-      <td>DATE</td>
-      <td>URL</td>
-    </tr>
-    <tr *ngFor = "let new of news">
-      <td>{{ new.header }}</td>
-      <td><a [href]="new.link">Link</a></td>
-    </tr>
-  </table>
+<div class="newPreviewContainer" *ngIf="news!=null; else wait">
+  <app-new-preview class="newPreview" *ngFor="let new of news" [new]="new"></app-new-preview>
 </div>
-
 <ng-template #wait>Cargando datos...</ng-template>

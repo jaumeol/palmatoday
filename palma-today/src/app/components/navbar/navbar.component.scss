@@ -1,28 +1,21 @@
-:host{
 
+.navbar {
   display: flex;
-  height: 50px;
-  align-items: center;
-  background-color: red;
+  padding: 10px;  
+  background: rgba(0, 0, 0, .55);
+}
 
-  .elems-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: baseline;
+.side-menu-button {
+  font-size: 3vw;
+  padding: 6px;  
+}
 
-    .side-menu-button{
-      margin:0 0 0 10px;
-    }
-
-    .logo-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 100%;
-    }
-  }
+.logo {
+  padding: 10px;  
+  flex: 3 1 auto;
+  text-align: center;
+  font-size: 4.5vw;
+}
 
   //side bar classes and animations
   .active{
@@ -45,6 +38,6 @@
 
   @keyframes sidebar-inactive {
     0% {transform: translateX(0%);}
-    100% {transform: translateX(-100%);}
+    100% {transform: translateX(-120%);}
   }
-}
+

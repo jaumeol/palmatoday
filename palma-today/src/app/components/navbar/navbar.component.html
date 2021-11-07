@@ -1,9 +1,8 @@
-<div class="elems-container navbar navbar-default">
-  <button class="side-menu-button"(click)="toggleSideBar()">≡</button>
-  <div class="logo-container">
-    <div class="main-logo">Palma Today</div>
-  </div>
+<div class="navbar">
+  <button class="side-menu-button" (click)="toggleSideBar()"><i class="fas fa-bars"></i></button>
+  <div class="logo">Palma Today</div>  
 </div>
+
 <ng-container *ngIf="true">
   <side-bar [ngClass]="activeSideBar ? 'active':'inactive'" [active]="activeSideBar"></side-bar>
 </ng-container>

@@ -1,2 +1,16 @@
-<app-source-dropdown></app-source-dropdown>
-<app-news></app-news>
+<div class="page">
+  <header class="header">
+    <div class="headerContainer">
+      <navbar></navbar>
+      <app-language-bar></app-language-bar>
+    </div>
+  </header>
+  <section>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    <aside class="aside">
+      <app-add-container></app-add-container>
+    </aside>
+  </section>
+</div>

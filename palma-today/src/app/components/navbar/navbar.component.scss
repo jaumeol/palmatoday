@@ -1,0 +1,43 @@
+
+.navbar {
+  display: flex;
+  padding: 10px;  
+  background: rgba(0, 0, 0, .55);
+}
+
+.side-menu-button {
+  font-size: 3vw;
+  padding: 6px;  
+}
+
+.logo {
+  padding: 10px;  
+  flex: 3 1 auto;
+  text-align: center;
+  font-size: 4.5vw;
+}
+
+  //side bar classes and animations
+  .active{
+    animation-name: sidebar-active;
+    animation-duration: 0.3s;
+  }
+
+  .inactive{
+    animation-name: sidebar-inactive;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    background-color: hotpink;
+    transform: translateX(-100%);
+  }
+
+  @keyframes sidebar-active {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0%);}
+  }
+
+  @keyframes sidebar-inactive {
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(-120%);}
+  }
+

@@ -19,18 +19,9 @@ export class NewsService {
 
   // returns the array of news stored on the (local, for now) server
   getAllNews(): void {
-    this.http.get<Array<New>>(this.url).subscribe(
-      //next
-      (newList) => {
-        this.news$.next(newList);
-      },
-      //error
-      (error) => {
-        console.log("error en servicio 'news service' getallnews");
-      },
-      //complete
-      () => { });
-    //return this.http.get(`${this.url}`,{ responseType: 'text' });
+    this.http.get<Array<New>>(this.url).toPromise().then((newList) => {
+      this.news$.next(newList);
+    }).catch(() => { console.log("error en servicio 'news service' getallnews"); });
   }
 
   getAllNewsObs(): Observable<Array<New>>{

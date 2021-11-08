@@ -1,1 +1,8 @@
-<p>navbar works!</p>
+<div class="navbar">
+  <button class="side-menu-button" (click)="toggleSideBar()"><i class="fas fa-bars"></i></button>
+  <div class="logo">Palma Today</div>  
+</div>
+
+<ng-container *ngIf="true">
+  <side-bar [ngClass]="activeSideBar ? 'active':'inactive'" [active]="activeSideBar"></side-bar>
+</ng-container>

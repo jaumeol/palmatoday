@@ -27,9 +27,8 @@ export class NewsComponent implements OnInit {
       this.refresh();
   }
 
-
   refresh(){
-    this.newsService.getAllNews();
+    this.newsService.getNews(["esp", "fra"]);
   }
 
   /*public title: string = "title";

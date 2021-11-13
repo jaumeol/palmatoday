@@ -1,0 +1,12 @@
+<div class="dropdown">
+  <div class="dropbtn">{{ lang }}<i class="far fa-caret-square-down"></i></div>
+  <div class="dropdown-content">
+    <a
+      *ngFor="let src of sources"
+      (click)="sendSource($event)"
+      routerLink="newsPreview"
+      routerLinkActive="active"
+      >{{ src }}</a
+    >
+  </div>
+</div>

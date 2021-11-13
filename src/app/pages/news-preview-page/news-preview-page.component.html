@@ -1,0 +1,10 @@
+<button (click)="refresh()">refresh</button>
+<div>{{ source }}</div>
+<div class="newPreviewContainer" *ngIf="news != null; else wait">
+  <app-new-preview
+    class="newPreview"
+    *ngFor="let new of news"
+    [new]="new"
+  ></app-new-preview>
+</div>
+<ng-template #wait>Cargando datos...</ng-template>

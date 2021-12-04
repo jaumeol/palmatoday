@@ -1,6 +1,6 @@
 <button (click)="refresh()">refresh</button>
 <div>{{ source }}</div>
-<div class="newPreviewContainer" *ngIf="news != null; else wait">
+<div *ngIf="news != null; else wait" class="newPreviewContainer">
   <app-new-preview
     class="newPreview"
     *ngFor="let new of news"

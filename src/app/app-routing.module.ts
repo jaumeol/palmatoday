@@ -18,12 +18,12 @@ const routes: Routes = [
     path: 'new',
     component: NewPageComponent,
   },
-  /*
   {
+    // Cambiar a new-page
     path: 'newsPreview/:source',
-    component: el componente que sea
+    // Cambiar a new-page
+    component: NewsPreviewPageComponent,
   },
-  */
   {
     path: '**',
     redirectTo: '',

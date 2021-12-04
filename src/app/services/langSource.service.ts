@@ -12,7 +12,7 @@ export class LangSourceService {
     { lang: 'DEUSTCH', src: ['Source10', 'Source11'] },
   ];
 
-  changeSource = new EventEmitter<any>();
+  onChangeSource = new EventEmitter<any>();
   source: string = '';
 
   get langSources(): LangSource[] {
@@ -24,6 +24,6 @@ export class LangSourceService {
   setSource(source: string) {
     this.source = source;
     //console.log(source);
-    this.changeSource.emit();
+    this.onChangeSource.emit();
   }
 }

@@ -17,7 +17,7 @@ export class NewsPreviewPageComponent implements OnInit {
     private langSourceService: LangSourceService
   ) {
     this.source = this.langSourceService.source;
-    this.langSourceService.changeSource.subscribe(
+    this.langSourceService.onChangeSource.subscribe(
       () => (this.source = this.langSourceService.source)
     );
 

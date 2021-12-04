@@ -9,14 +9,19 @@ import { LangSourceService } from 'src/app/services/langSource.service';
 export class SrcDropdownComponent implements OnInit {
   @Input() lang: string = '';
   @Input() sources: string[] = [];
+  selectedSource: string = '';
 
   constructor(private langSourceService: LangSourceService) {}
 
   ngOnInit(): void {}
 
+  setSelectedSource(event: MouseEvent) {
+    let source: any = event.target;
+    this.selectedSource = `newsPreview/${source.innerText}`;
+  }
+
   sendSource(event: MouseEvent) {
     let source: any = event.target;
-    //console.log(source.innerText);
     this.langSourceService.setSource(source.innerText);
   }
 }

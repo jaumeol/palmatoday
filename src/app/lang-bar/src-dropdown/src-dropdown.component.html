@@ -3,8 +3,9 @@
   <div class="dropdown-content">
     <a
       *ngFor="let src of sources"
+      (mousedown)="setSelectedSource($event)"
       (click)="sendSource($event)"
-      routerLink="newsPreview"
+      [routerLink]="selectedSource"
       routerLinkActive="active"
       >{{ src }}</a
     >

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { New } from 'src/app/interfaces/new';
+import { New, Source } from 'src/app/interfaces/new';
 import { NewsService } from 'src/app/services/news.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class NewsComponent implements OnInit {
   }
 
   refresh(){
-    this.newsService.getNews(["esp", "fra"]);
+    this.newsService.getAllNews();
   }
 
   /*public title: string = "title";
